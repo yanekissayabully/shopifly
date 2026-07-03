@@ -17,8 +17,8 @@ const contactInfo = [
   },
   {
     label: 'Телефон',
-    value: '+7 (727) 123-45-67',
-    href: 'tel:+77271234567',
+    value: '+7 (747) 951-89-10',
+    href: 'tel:+77479518910',
     icon: (
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
         <path
@@ -59,10 +59,10 @@ const contactInfo = [
   },
 ]
 
-const socialLinks = [
+const socialLinks: { label: string; href: string; icon: React.ReactNode }[] = [
   {
     label: 'Instagram',
-    href: '#',
+    href: 'https://www.instagram.com/shopifly.ala?igsh=YmZ0ZW4xcjNyeTM3',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="1.5" />
@@ -73,7 +73,7 @@ const socialLinks = [
   },
   {
     label: 'WhatsApp',
-    href: '#',
+    href: 'https://wa.me/message/2ELPGG7NCVODB1',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path
@@ -87,21 +87,6 @@ const socialLinks = [
           stroke="currentColor"
           strokeWidth="1.5"
           strokeLinecap="round"
-        />
-      </svg>
-    ),
-  },
-  {
-    label: 'Telegram',
-    href: '#',
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path
-          d="M21 5L2 12.5L9 13.5M21 5L18.5 20L9 13.5M21 5L9 13.5M9 13.5V20L12.5 16.5"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
         />
       </svg>
     ),
@@ -161,20 +146,22 @@ export default function Contacts() {
             </div>
 
             {/* Social links block */}
-            <div className="bg-background rounded-xl border border-border p-6 sm:p-8">
-              <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-5">
+            <div className="bg-background rounded-xl border border-border p-5 sm:p-6">
+              <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-4">
                 Мы в социальных сетях
               </p>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2.5">
                 {socialLinks.map((social) => (
                   <a
                     key={social.label}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="flex items-center gap-2.5 px-4 py-2.5 rounded-lg border border-border text-foreground/60 hover:text-primary hover:border-primary transition-all duration-200"
+                    className="flex items-center gap-2 px-3.5 py-2 rounded-lg border border-border text-foreground/60 hover:text-primary hover:border-primary transition-all duration-200 text-sm"
                   >
                     {social.icon}
-                    <span className="text-sm font-medium">{social.label}</span>
+                    {social.label}
                   </a>
                 ))}
               </div>

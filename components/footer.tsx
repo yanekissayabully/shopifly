@@ -1,12 +1,7 @@
 import Link from 'next/link'
 
 const footerLinks = {
-  Помощь: [
-    { label: 'Доставка и оплата', href: '#' },
-    { label: 'Возврат и обмен', href: '#' },
-    { label: 'Размерная таблица', href: '#' },
-    { label: 'FAQ', href: '#' },
-  ],
+  
   Компания: [
     { label: 'О нас', href: '#why-us' },
     { label: 'Контакты', href: '#contacts' },
@@ -17,7 +12,7 @@ const footerLinks = {
 const socialLinks = [
   {
     label: 'Instagram',
-    href: '#',
+    href: 'https://www.instagram.com/shopifly.ala?igsh=YmZ0ZW4xcjNyeTM3',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="1.5" />
@@ -27,23 +22,8 @@ const socialLinks = [
     ),
   },
   {
-    label: 'Telegram',
-    href: '#',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path
-          d="M21 5L2 12.5L9 13.5M21 5L18.5 20L9 13.5M21 5L9 13.5M9 13.5V20L12.5 16.5"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-  },
-  {
     label: 'WhatsApp',
-    href: '#',
+    href: 'https://wa.me/message/2ELPGG7NCVODB1',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path
@@ -64,12 +44,13 @@ const socialLinks = [
 ]
 
 const requisites = [
-  { label: 'Компания', value: 'ИП ONELIFE' },
-  { label: 'БИН (ИИН)', value: '960424301072' },
+  { label: 'Компания', value: 'ИП SHOPIFLY' },
+  { label: 'БИН (ИИН)', value: '960305401983' },
   { label: 'Банк', value: 'АО "Kaspi Bank"' },
   { label: 'КБе', value: '19' },
   { label: 'БИК', value: 'CASPKZKA' },
   { label: 'Номер счёта', value: 'KZ94722S000015873461' },
+  { label: 'Юридический адрес', value: 'Алматинская область, Талгарский район, Гульдалинский, Жана Куат, улица 76, 2 кВ, 22' },
 ]
 
 export default function Footer() {
@@ -98,6 +79,8 @@ export default function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   className="w-9 h-9 flex items-center justify-center rounded-md border border-primary-foreground/20 text-primary-foreground/50 hover:text-primary-foreground hover:border-primary-foreground/50 transition-colors duration-200"
                 >
@@ -139,7 +122,7 @@ export default function Footer() {
                   <span className="text-[10px] text-primary-foreground/35 tracking-wide">
                     {r.label}
                   </span>
-                  <span className="text-xs text-primary-foreground/70 font-mono tracking-wide break-all">
+                  <span className="text-xs sm:text-sm text-primary-foreground/70 tracking-wide break-all">
                     {r.value}
                   </span>
                 </li>

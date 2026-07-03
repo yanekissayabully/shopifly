@@ -118,25 +118,25 @@ export default function Header() {
       {/* Mobile menu — rendered outside header to avoid transparency inheritance */}
       <div
         aria-hidden={!menuOpen}
-        className={`md:hidden fixed top-16 inset-x-0 bottom-0 z-40 transition-transform duration-300 ease-in-out ${
+        className={`md:hidden fixed top-16 sm:top-20 inset-x-0 bottom-0 z-40 transition-transform duration-300 ease-in-out ${
           menuOpen ? 'translate-y-0 pointer-events-auto' : '-translate-y-[110%] pointer-events-none'
         }`}
         style={{ backgroundColor: '#faf7f4' }}
       >
-        <nav className="flex flex-col h-full px-6 pt-8 pb-10 overflow-y-auto">
+        <nav className="flex flex-col h-full px-5 pt-6 pb-6 overflow-y-auto">
           {navLinks.map((link, i) => (
             <button
               key={link.href}
               onClick={() => handleNavClick(link.href)}
-              className={`text-left py-5 border-b border-stone-200 text-stone-700 hover:text-primary transition-colors cursor-pointer ${
+              className={`text-left py-4 border-b border-stone-200 text-stone-700 hover:text-primary transition-colors cursor-pointer ${
                 i === 0 ? 'border-t' : ''
               }`}
             >
-              <span className="text-xs tracking-[0.3em] uppercase block text-stone-400 mb-1">
+              <span className="text-[10px] tracking-[0.3em] uppercase block text-stone-400 mb-0.5">
                 0{i + 1}
               </span>
               <span
-                className="font-serif text-3xl"
+                className="font-serif text-2xl"
                 style={{ fontFamily: 'var(--font-cormorant), Georgia, serif' }}
               >
                 {link.label}
@@ -144,21 +144,27 @@ export default function Header() {
             </button>
           ))}
 
-          <div className="mt-auto flex flex-col gap-4 pt-8">
+          <div className="mt-auto flex flex-col gap-3 pt-6">
             <button
               onClick={() => handleNavClick('#contacts')}
-              className="text-sm tracking-[0.15em] uppercase px-6 py-4 rounded-lg bg-primary text-white hover:bg-primary/90 transition-all duration-300 w-full text-center cursor-pointer"
+              className="text-xs tracking-[0.15em] uppercase px-5 py-3 rounded-lg bg-primary text-white hover:bg-primary/90 transition-all duration-300 w-full text-center cursor-pointer"
             >
               Связаться с нами
             </button>
-            <div className="flex items-center justify-center gap-8">
-              {['Instagram', 'WhatsApp', 'Telegram'].map((s) => (
+            <div className="flex items-center justify-center gap-6">
+              {[
+                { label: 'Instagram', href: 'https://www.instagram.com/shopifly.ala?igsh=YmZ0ZW4xcjNyeTM3' },
+                { label: 'WhatsApp', href: 'https://wa.me/message/2ELPGG7NCVODB1' },
+                { label: 'Telegram', href: '#' },
+              ].map((s) => (
                 <a
-                  key={s}
-                  href="#"
-                  className="text-xs tracking-[0.2em] uppercase text-stone-400 hover:text-primary transition-colors"
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[10px] tracking-[0.2em] uppercase text-stone-400 hover:text-primary transition-colors"
                 >
-                  {s}
+                  {s.label}
                 </a>
               ))}
             </div>

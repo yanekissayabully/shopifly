@@ -126,9 +126,10 @@ export default function WhyUs() {
         <div className="mt-px bg-border">
           <div className="bg-background relative overflow-hidden h-52 sm:h-72 md:h-96">
             <Image
-              src="/2.jpg?height=400&width=1400"
+              src="/2.jpg"
               alt="Коллекция Shopifly"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 1400px"
               className="object-cover opacity-60"
             />
             <div className="absolute inset-0 flex items-center justify-center px-6">

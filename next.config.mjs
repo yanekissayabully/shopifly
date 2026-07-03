@@ -1,10 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   images: {
-    unoptimized: true,
+    deviceSizes: [480, 768, 1024, 1280, 1536],
+    formats: ['image/webp'],
   },
 }
 

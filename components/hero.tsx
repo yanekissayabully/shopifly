@@ -34,9 +34,10 @@ export default function Hero() {
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/1.jpg?height=1080&width=1920"
+          src="/1.jpg"
           alt="Женская мода Shopifly"
           fill
+          sizes="100vw"
           className="object-cover"
           priority
         />
@@ -45,36 +46,18 @@ export default function Hero() {
         <div className="absolute inset-0 bg-background/15" />
       </div>
 
-      {/* Decorative vertical line — desktop only */}
-      <div className="absolute left-10 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-4 z-10">
-        <div className="w-px h-24 bg-primary-foreground/40" />
-        <span
-          className="text-primary-foreground/60 text-[10px] tracking-[0.4em] uppercase"
-          style={{ writingMode: 'vertical-rl' }}
-        >
-          Shopifly 2025
-        </span>
-        <div className="w-px h-24 bg-primary-foreground/40" />
-      </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 w-full pt-20 pb-36 sm:pb-32">
         <div className="max-w-2xl">
-          {/* Tag line */}
-          <div className="flex items-center gap-3 mb-6 sm:mb-8">
-            <div className="w-8 sm:w-10 h-px bg-primary-foreground/70" />
-            <span className="text-primary-foreground/80 text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase">
-              Новая коллекция 2025
-            </span>
-          </div>
 
           {/* Main heading */}
           <h1
             ref={titleRef}
-            className="font-serif text-primary-foreground leading-[1.1] mb-5 sm:mb-6"
+            className="font-serif text-primary-foreground leading-[1.1] mb-4 sm:mb-5"
             style={{
               fontFamily: 'var(--font-cormorant), Georgia, serif',
-              fontSize: 'clamp(2.4rem, 8vw, 6rem)',
+              fontSize: 'clamp(2.4rem, 6vw, 4.5rem)',
             }}
           >
             Мода, которая
@@ -83,35 +66,26 @@ export default function Hero() {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-primary-foreground/80 text-sm sm:text-base md:text-lg leading-relaxed mb-8 sm:mb-10 max-w-md">
-            Элегантные образы для современной женщины. Каждая вещь — это история стиля,
-            качества и самовыражения.
+          <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8 max-w-md">
+            Элегантные образы для современной женщины.
           </p>
 
           {/* CTA buttons */}
-          <div className="flex flex-col xs:flex-row gap-3 sm:gap-4">
+          <div className="flex flex-col xs:flex-row gap-3">
             <button
               onClick={handleShopClick}
-              className="w-full xs:w-auto px-6 sm:px-8 py-3.5 rounded-lg bg-primary text-primary-foreground text-xs sm:text-sm tracking-[0.15em] uppercase hover:bg-primary/90 transition-all duration-300 cursor-pointer text-center"
+              className="w-auto px-3 sm:px-4 py-2 rounded-lg bg-primary text-primary-foreground text-xs tracking-[0.15em] uppercase hover:bg-primary/90 transition-all duration-300 cursor-pointer"
             >
               Смотреть коллекцию
             </button>
             <button
               onClick={handleContactClick}
-              className="w-full xs:w-auto px-6 sm:px-8 py-3.5 rounded-lg border border-primary-foreground/70 text-primary-foreground text-xs sm:text-sm tracking-[0.15em] uppercase hover:bg-primary-foreground/10 transition-all duration-300 cursor-pointer text-center"
+              className="w-auto px-3 sm:px-4 py-2 rounded-lg border border-primary-foreground/70 text-primary-foreground text-xs tracking-[0.15em] uppercase hover:bg-primary-foreground/10 transition-all duration-300 cursor-pointer"
             >
               Связаться
             </button>
           </div>
         </div>
-      </div>
-
-      {/* Scroll indicator — hidden on very small screens */}
-      <div className="absolute bottom-24 sm:bottom-14 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-2">
-        <span className="text-primary-foreground/60 text-[10px] tracking-[0.3em] uppercase">
-          Листать
-        </span>
-        <div className="w-px h-10 bg-primary-foreground/40 animate-pulse" />
       </div>
 
       {/* Bottom stats bar */}

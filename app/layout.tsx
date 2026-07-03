@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import { Cormorant_Garamond } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
 
 const inter = Inter({
@@ -18,6 +19,14 @@ export const metadata: Metadata = {
   title: 'Shopifly — Женская одежда',
   description: 'Элегантная женская одежда для современных женщин. Стиль, качество и комфорт в каждой детали.',
   keywords: ['женская одежда', 'мода', 'стиль', 'Shopifly'],
+  icons: {
+    icon: [
+      { url: '/icon-light-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon-dark-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+  },
 }
 
 export const viewport: Viewport = {
@@ -34,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className={`${inter.variable} ${cormorant.variable} bg-background`}>
-      <body className="antialiased font-sans">{children}</body>
+      <body className="antialiased font-sans">{children}<Analytics /></body>
     </html>
   )
 }
