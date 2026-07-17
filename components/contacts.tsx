@@ -3,7 +3,7 @@
 const contactInfo = [
   {
     label: 'Адрес',
-    value: 'г. Алматы, ул. Абая 150, ТЦ «Мода», бутик 12',
+    value: 'г. Алматы, ул. Серкебаева 111',
     icon: (
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
         <path
@@ -32,8 +32,8 @@ const contactInfo = [
   },
   {
     label: 'Email',
-    value: 'hello@shopifly.kz',
-    href: 'mailto:hello@shopifly.kz',
+    value: 'aselyafox@mail.ru',
+    href: 'mailto:aselyafox@mail.ru',
     icon: (
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
         <rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" strokeWidth="1.5" />
@@ -43,7 +43,7 @@ const contactInfo = [
   },
   {
     label: 'Режим работы',
-    value: 'Пн–Пт: 10:00–20:00, Сб–Вс: 11:00–19:00',
+    value: 'Пн–Вс: 10:00–20:00',
     icon: (
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
         <circle cx="10" cy="10" r="8" stroke="currentColor" strokeWidth="1.5" />
@@ -172,7 +172,7 @@ export default function Contacts() {
           <div className="flex flex-col gap-4">
             <div className="relative w-full overflow-hidden rounded-xl bg-border" style={{ minHeight: '300px' }}>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.908985424012!2d76.88765!3d43.24215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836e855a6c39e5%3A0x2d54d6bb22e61bca!2z0YPQuy4g0JDQsdCw0Y8sINCQ0LvQvNCw0YLRiywg0JrQsNC30LDRhdGB0YLQsNC9!5e0!3m2!1sru!2s!4v1709900000000!5m2!1sru!2s"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1179.025867972462!2d76.89487955049658!3d43.22422407127139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x388368de3641edc5%3A0xb5ad7035a71e5e8!2z0L_RgNC-0YHQv9C10LrRgiDQodC10YDQutC10LHQsNC10LLQsCAxMTEsINCQ0LvQvNCw0YLRiyAwNTAwNjA!5e0!3m2!1sru!2skz!4v1784290952725!5m2!1sru!2skz"
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: '300px', display: 'block' }}
@@ -183,9 +183,6 @@ export default function Contacts() {
                 className="w-full lg:min-h-[500px]"
               />
             </div>
-            <p className="text-xs text-muted-foreground text-center">
-              г. Алматы, ул. Абая 150 — в центре города, рядом с метро
-            </p>
           </div>
         </div>
       </div>

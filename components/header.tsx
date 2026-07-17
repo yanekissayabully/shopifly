@@ -155,7 +155,7 @@ export default function Header() {
               {[
                 { label: 'Instagram', href: 'https://www.instagram.com/shopifly.ala?igsh=YmZ0ZW4xcjNyeTM3' },
                 { label: 'WhatsApp', href: 'https://wa.me/message/2ELPGG7NCVODB1' },
-                { label: 'Telegram', href: '#' },
+                { label: '2GIS', href: 'https://2gis.kz/almaty/firm/70000001083033044?m=76.899318%2C43.200609%2F16.78' },
               ].map((s) => (
                 <a
                   key={s.label}
