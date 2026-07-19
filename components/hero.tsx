@@ -96,20 +96,36 @@ export default function Hero() {
             Сияй вместе с
           </p>
 
-          <div className="flex flex-col xs:flex-row gap-3">
-            <button
-              onClick={handleShopClick}
-              className="w-auto px-3 sm:px-4 py-2 rounded-lg bg-primary text-primary-foreground text-xs tracking-[0.15em] uppercase hover:bg-primary/90 transition-all duration-300 cursor-pointer"
-            >
-              Смотреть коллекцию
-            </button>
-            <button
-              onClick={handleContactClick}
-              className="w-auto px-3 sm:px-4 py-2 rounded-lg border border-primary-foreground/70 text-primary-foreground text-xs tracking-[0.15em] uppercase hover:bg-primary-foreground/10 transition-all duration-300 cursor-pointer"
-            >
-              Связаться
-            </button>
-          </div>
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+  <button
+    onClick={handleShopClick}
+    className="group inline-flex items-center gap-2 px-6 sm:px-7 py-3 rounded-full bg-primary text-primary-foreground text-xs sm:text-sm font-medium tracking-[0.15em] uppercase shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:bg-primary/90 active:scale-[0.98] transition-all duration-300 cursor-pointer"
+  >
+    Смотреть коллекцию
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 20 20"
+      fill="none"
+      className="transition-transform duration-300 group-hover:translate-x-1"
+    >
+      <path
+        d="M4 10H16M16 10L11 5M16 10L11 15"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </button>
+
+  <button
+    onClick={handleContactClick}
+    className="inline-flex items-center px-6 sm:px-7 py-3 rounded-full border border-primary-foreground/50 text-primary-foreground text-xs sm:text-sm font-medium tracking-[0.15em] uppercase backdrop-blur-sm hover:bg-primary-foreground/10 hover:border-primary-foreground active:scale-[0.98] transition-all duration-300 cursor-pointer"
+  >
+    Связаться
+  </button>
+</div>
         </div>
       </div>
 

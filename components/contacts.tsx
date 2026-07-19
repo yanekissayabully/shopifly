@@ -191,21 +191,22 @@ export default function Contacts() {
           </div>
 
           {/* Right: Map */}
-          <div className="flex flex-col gap-4">
-            <div className="relative w-full overflow-hidden rounded-xl bg-border" style={{ minHeight: '300px' }}>
-              <iframe
-                src="https://yandex.kz/maps/embed/?ll=76.899065,43.201343&z=17&pt=76.899065,43.201343,pm2rdm&lang=ru"
-                width="100%"
-                height="100%"
-                style={{ border: 0, minHeight: '300px', display: 'block' }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Расположение магазина Shopifly на карте"
-                className="w-full lg:min-h-[500px]"
-              />
-            </div>
-          </div>
+          {/* Right: Map */}
+<div className="flex flex-col gap-4">
+  <div className="relative w-full overflow-hidden rounded-xl bg-border" style={{ minHeight: '300px' }}>
+    <iframe
+      src="https://yandex.ru/map-widget/v1/?ll=76.899065%2C43.201343&z=17&pt=76.899065,43.201343,pm2rdm&lang=ru_RU"
+      width="100%"
+      height="100%"
+      style={{ border: 0, minHeight: '300px', display: 'block' }}
+      allowFullScreen
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+      title="Расположение магазина Shopifly на карте"
+      className="w-full lg:min-h-[500px]"
+    />
+  </div>
+</div>
         </div>
       </div>
     </section>
