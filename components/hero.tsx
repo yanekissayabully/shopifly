@@ -1,10 +1,17 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+
+const carouselImages = [
+  { src: '/1.png', alt: 'Shopifly коллекция 1' },
+  { src: '/2.png', alt: 'Shopifly коллекция 2' },
+  { src: '/3.png', alt: 'Shopifly коллекция 3' },
+]
 
 export default function Hero() {
   const titleRef = useRef<HTMLHeadingElement>(null)
+  const [currentSlide, setCurrentSlide] = useState(0)
 
   useEffect(() => {
     const el = titleRef.current
@@ -19,6 +26,13 @@ export default function Hero() {
     return () => clearTimeout(timer)
   }, [])
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % carouselImages.length)
+    }, 4000)
+    return () => clearInterval(interval)
+  }, [])
+
   const handleShopClick = () => {
     const el = document.querySelector('#why-us')
     if (el) el.scrollIntoView({ behavior: 'smooth' })
@@ -31,8 +45,8 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0 z-0">
+      {/* Desktop background — hidden on mobile */}
+      <div className="absolute inset-0 z-0 hidden md:block">
         <Image
           src="/1.jpg"
           alt="Женская мода Shopifly"
@@ -41,17 +55,31 @@ export default function Hero() {
           className="object-cover"
           priority
         />
-        {/* Warm overlay */}
-        <div className="absolute inset-0 bg-foreground/35" />
-        <div className="absolute inset-0 bg-background/15" />
       </div>
 
+      {/* Mobile carousel — hidden on desktop */}
+      <div className="absolute inset-0 z-0 md:hidden">
+        {carouselImages.map((img, i) => (
+          <Image
+            key={img.src}
+            src={img.src}
+            alt={img.alt}
+            fill
+            sizes="100vw"
+            className="object-cover transition-opacity duration-1000 ease-in-out"
+            style={{ opacity: currentSlide === i ? 1 : 0 }}
+            priority={i === 0}
+          />
+        ))}
+      </div>
+
+      {/* Overlays */}
+      <div className="absolute inset-0 z-[1] bg-foreground/35" />
+      <div className="absolute inset-0 z-[1] bg-background/15" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 w-full pt-20 pb-36 sm:pb-32">
         <div className="max-w-2xl">
-
-          {/* Main heading */}
           <h1
             ref={titleRef}
             className="font-serif text-primary-foreground leading-[1.1] mb-4 sm:mb-5"
@@ -60,17 +88,14 @@ export default function Hero() {
               fontSize: 'clamp(2.4rem, 6vw, 4.5rem)',
             }}
           >
-            Мода, которая
+            SHOPIFLY
             <br />
-            <span className="italic">говорит за тебя</span>
           </h1>
 
-          {/* Subtitle */}
-          <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8 max-w-md">
-            Элегантные образы для современной женщины.
+          <p className="text-white/80 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 max-w-md">
+            Сияй вместе с
           </p>
 
-          {/* CTA buttons */}
           <div className="flex flex-col xs:flex-row gap-3">
             <button
               onClick={handleShopClick}

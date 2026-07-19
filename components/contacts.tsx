@@ -43,7 +43,7 @@ const contactInfo = [
   },
   {
     label: 'Режим работы',
-    value: 'Пн–Вс: 10:00–20:00',
+    value: 'Пн–Вс: 10:00–22:00',
     icon: (
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
         <circle cx="10" cy="10" r="8" stroke="currentColor" strokeWidth="1.5" />
@@ -68,6 +68,28 @@ const socialLinks: { label: string; href: string; icon: React.ReactNode }[] = [
         <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="1.5" />
         <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" />
         <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Telegram',
+    href: 'https://t.me/shopifly2024',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M22 2L11 13"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M22 2L15 22L11 13L2 9L22 2Z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     ),
   },
@@ -172,7 +194,7 @@ export default function Contacts() {
           <div className="flex flex-col gap-4">
             <div className="relative w-full overflow-hidden rounded-xl bg-border" style={{ minHeight: '300px' }}>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1179.025867972462!2d76.89487955049658!3d43.22422407127139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x388368de3641edc5%3A0xb5ad7035a71e5e8!2z0L_RgNC-0YHQv9C10LrRgiDQodC10YDQutC10LHQsNC10LLQsCAxMTEsINCQ0LvQvNCw0YLRiyAwNTAwNjA!5e0!3m2!1sru!2skz!4v1784290952725!5m2!1sru!2skz"
+                src="https://yandex.kz/maps/embed/?ll=76.899065,43.201343&z=17&pt=76.899065,43.201343,pm2rdm&lang=ru"
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: '300px', display: 'block' }}

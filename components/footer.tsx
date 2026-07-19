@@ -22,6 +22,28 @@ const socialLinks = [
     ),
   },
   {
+    label: 'Telegram',
+    href: 'https://t.me/shopifly2024',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M22 2L11 13"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M22 2L15 22L11 13L2 9L22 2Z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
     label: 'WhatsApp',
     href: 'https://wa.me/message/2ELPGG7NCVODB1',
     icon: (
