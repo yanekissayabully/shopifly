@@ -4,9 +4,10 @@ import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 
 const carouselImages = [
-  { src: '/1.png', alt: 'Shopifly коллекция 1' },
-  { src: '/2.png', alt: 'Shopifly коллекция 2' },
-  { src: '/3.png', alt: 'Shopifly коллекция 3' },
+  { src: '/1.PNG', alt: 'Shopifly коллекция 1' },
+  { src: '/2.PNG', alt: 'Shopifly коллекция 2' },
+  { src: '/3.PNG', alt: 'Shopifly коллекция 3' },
+  { src: '/4.jpeg', alt: 'Shopifly коллекция 4' },
 ]
 
 export default function Hero() {
@@ -123,7 +124,7 @@ export default function Hero() {
     onClick={handleContactClick}
     className="inline-flex items-center px-6 sm:px-7 py-3 rounded-full border border-primary-foreground/50 text-primary-foreground text-xs sm:text-sm font-medium tracking-[0.15em] uppercase backdrop-blur-sm hover:bg-primary-foreground/10 hover:border-primary-foreground active:scale-[0.98] transition-all duration-300 cursor-pointer"
   >
-    Связаться
+    Заказать онлайн
   </button>
 </div>
         </div>
